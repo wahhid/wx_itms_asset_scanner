@@ -21,9 +21,9 @@ class ScannerFrame ( wx.Frame ):
 		
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		
-		fgSizer1 = wx.FlexGridSizer( 3, 2, 0, 0 )
+		fgSizer1 = wx.FlexGridSizer( 4, 2, 0, 0 )
 		fgSizer1.AddGrowableCol( 1 )
-		fgSizer1.AddGrowableRow( 2 )
+		fgSizer1.AddGrowableRow( 3 )
 		fgSizer1.SetFlexibleDirection( wx.BOTH )
 		fgSizer1.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
 		
@@ -33,6 +33,23 @@ class ScannerFrame ( wx.Frame ):
 		
 		self.txtassetname = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		fgSizer1.Add( self.txtassetname, 0, wx.ALL|wx.EXPAND, 5 )
+		
+		self.m_staticText5 = wx.StaticText( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText5.Wrap( -1 )
+		fgSizer1.Add( self.m_staticText5, 0, wx.ALL, 5 )
+		
+		fgSizer4 = wx.FlexGridSizer( 0, 2, 0, 0 )
+		fgSizer4.SetFlexibleDirection( wx.BOTH )
+		fgSizer4.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
+		
+		self.rd_hardware = wx.RadioButton( self, wx.ID_ANY, u"Hardware", wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer4.Add( self.rd_hardware, 0, wx.ALL, 5 )
+		
+		self.rd_software = wx.RadioButton( self, wx.ID_ANY, u"Software", wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer4.Add( self.rd_software, 0, wx.ALL, 5 )
+		
+		
+		fgSizer1.Add( fgSizer4, 1, wx.EXPAND, 5 )
 		
 		self.m_staticText2 = wx.StaticText( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText2.Wrap( -1 )
